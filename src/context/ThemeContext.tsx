@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { lightTheme, darkTheme } from '../theme/theme';
-import { ThemeContext, ThemeMode } from './themeContext';
+import { ThemeContext, type ThemeMode } from "./themeContext";
 
 interface CustomThemeProviderProps {
   children: React.ReactNode;

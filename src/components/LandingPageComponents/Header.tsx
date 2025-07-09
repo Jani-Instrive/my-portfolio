@@ -128,55 +128,52 @@ const Header: React.FC = () => {
   return (
     <>
       <AppBar
-        position='fixed'
+        position="fixed"
         sx={{
-          backgroundColor: 'transparent',
-          backdropFilter: 'none',
-          borderBottom: 'none',
-          boxShadow: 'none',
-          background: 'transparent',
+          backgroundColor: "transparent",
+          backdropFilter: "none",
+          borderBottom: "none",
+          boxShadow: "none",
+          background: "transparent",
           top: isScrolled ? 0 : 20,
-          transition: 'all 0.6s ease',
+          transition: "all 0.6s ease",
           zIndex: 1100,
           left: 0,
           right: 0,
-          width: '100%',
+          width: "100%",
         }}
       >
-        {' '}
         {isScrolled ? (
           <motion.div
             initial={false}
             animate={{
-              width: '100%',
+              width: "100%",
               borderRadius: 0,
             }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <Box
               sx={{
-                backgroundColor: 'rgba(43, 43, 43, 0.95)',
-                backdropFilter: 'blur(10px)',
+                backgroundColor: "rgba(43, 43, 43, 0.95)",
+                backdropFilter: "blur(10px)",
                 px: { xs: 2, sm: 2, md: 2, lg: 2, xl: 2 },
                 py: 1,
-                boxShadow: '0 2px 20px rgba(0, 0, 0, 0.1)',
-                transition: 'all 0.3s ease',
-                width: '100%',
-                
+                boxShadow: "0 2px 20px rgba(0, 0, 0, 0.1)",
+                transition: "all 0.3s ease",
+                width: "100%",
               }}
             >
               <Toolbar
                 sx={{
-                  justifyContent: 'space-between',
+                  justifyContent: "space-between",
                   py: 0.5,
                   px: 0,
-                  minHeight: '56px !important',
-                  width: '100%',
-                  maxWidth: '1536px',
-                margin: 'auto',
+                  minHeight: "56px !important",
+                  width: "100%",
+                  maxWidth: "1536px",
+                  margin: "auto",
                 }}
               >
-                {' '}
                 <motion.div
                   {...getAnimationProps(
                     { opacity: 0, x: -20 },
@@ -185,45 +182,45 @@ const Header: React.FC = () => {
                 >
                   <Box
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      cursor: 'pointer',
-                      '&:hover': {
-                        transform: 'scale(1.05)',
+                      display: "flex",
+                      alignItems: "center",
+                      cursor: "pointer",
+                      "&:hover": {
+                        transform: "scale(1.05)",
                       },
-                      transition: 'transform 0.2s ease',
+                      transition: "transform 0.2s ease",
                     }}
-                    onClick={() => scrollToSection('home')}
+                    onClick={() => scrollToSection("home")}
                   >
                     <Avatar
                       sx={{
                         width: 32,
                         height: 32,
                         mr: 2,
-                        background: '#FF6B35',
+                        background: "#FF6B35",
                         fontWeight: 700,
-                        fontSize: '1rem',
-                        color: 'white',
+                        fontSize: "1rem",
+                        color: "white",
                       }}
                     >
                       J
                     </Avatar>
                     <Typography
-                      variant='h6'
-                      component='div'
+                      variant="h6"
+                      component="div"
                       sx={{
                         fontWeight: 700,
-                        color: 'white',
-                        fontSize: '1.1rem',
+                        color: "white",
+                        fontSize: "1.1rem",
                       }}
                     >
                       Jani
                     </Typography>
                   </Box>
-                </motion.div>{' '}
+                </motion.div>{" "}
                 {!isSmall ? (
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                    {' '}
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    {" "}
                     <AnimatePresence>
                       {NAVIGATION_ITEMS.map((item, index) => (
                         <motion.div
@@ -235,24 +232,24 @@ const Header: React.FC = () => {
                           )}
                         >
                           <Button
-                            color='inherit'
+                            color="inherit"
                             onClick={() => handleNavClick(item.href)}
                             sx={{
                               mx: 0.5,
-                              color: 'white',
+                              color: "white",
                               fontWeight: 500,
-                              padding: '6px 16px',
-                              borderRadius: '25px',
-                              fontSize: '14px',
-                              '&:hover': {
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                              padding: "6px 16px",
+                              borderRadius: "25px",
+                              fontSize: "14px",
+                              "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.1)",
                               },
                             }}
                           >
                             {item.label}
                           </Button>
                         </motion.div>
-                      ))}{' '}
+                      ))}{" "}
                     </AnimatePresence>
                     <motion.div
                       {...getAnimationProps(
@@ -262,25 +259,25 @@ const Header: React.FC = () => {
                       )}
                     >
                       <Box
-                        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
                       >
                         <ThemeToggle />
                         <Button
-                          variant='outlined'
+                          variant="outlined"
                           startIcon={<LoginIcon />}
                           onClick={() => setLoginOpen(true)}
                           sx={{
                             ml: 1,
                             px: 3,
                             py: 1,
-                            borderColor: '#FF6B35',
-                            color: '#FF6B35',
-                            borderRadius: '25px',
-                            fontSize: '14px',
+                            borderColor: "#FF6B35",
+                            color: "#FF6B35",
+                            borderRadius: "25px",
+                            fontSize: "14px",
                             fontWeight: 600,
-                            '&:hover': {
-                              borderColor: '#FF6B35',
-                              backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                            "&:hover": {
+                              borderColor: "#FF6B35",
+                              backgroundColor: "rgba(255, 107, 53, 0.1)",
                             },
                           }}
                         >
@@ -291,11 +288,11 @@ const Header: React.FC = () => {
                   </Box>
                 ) : (
                   <IconButton
-                    color='inherit'
-                    aria-label='open drawer'
+                    color="inherit"
+                    aria-label="open drawer"
                     onClick={handleDrawerToggle}
                     sx={{
-                      color: 'white',
+                      color: "white",
                     }}
                   >
                     <MenuIcon />
@@ -306,28 +303,28 @@ const Header: React.FC = () => {
           </motion.div>
         ) : (
           <Container
-            maxWidth='xl'
+            maxWidth="xl"
             sx={{
               px: { xs: 2, sm: 3, md: 4, lg: 6, xl: 8 },
             }}
           >
             <Box
               sx={{
-                backgroundColor: '#2B2B2B',
-                borderRadius: '50px',
+                backgroundColor: "#2B2B2B",
+                borderRadius: "50px",
                 px: 3,
                 py: 1,
-                transition: 'all 0.3s ease',
-                width: '100%',
+                transition: "all 0.3s ease",
+                width: "100%",
               }}
             >
-              {' '}
+              {" "}
               <Toolbar
                 sx={{
-                  justifyContent: 'space-between',
+                  justifyContent: "space-between",
                   py: 0.5,
                   px: 0,
-                  minHeight: '56px !important',
+                  minHeight: "56px !important",
                 }}
               >
                 <motion.div
@@ -338,36 +335,36 @@ const Header: React.FC = () => {
                 >
                   <Box
                     sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      cursor: 'pointer',
-                      '&:hover': {
-                        transform: 'scale(1.05)',
+                      display: "flex",
+                      alignItems: "center",
+                      cursor: "pointer",
+                      "&:hover": {
+                        transform: "scale(1.05)",
                       },
-                      transition: 'transform 0.2s ease',
+                      transition: "transform 0.2s ease",
                     }}
-                    onClick={() => scrollToSection('home')}
+                    onClick={() => scrollToSection("home")}
                   >
                     <Avatar
                       sx={{
                         width: 32,
                         height: 32,
                         mr: 2,
-                        background: '#FF6B35',
+                        background: "#FF6B35",
                         fontWeight: 700,
-                        fontSize: '1rem',
-                        color: 'white',
+                        fontSize: "1rem",
+                        color: "white",
                       }}
                     >
                       J
                     </Avatar>
                     <Typography
-                      variant='h6'
-                      component='div'
+                      variant="h6"
+                      component="div"
                       sx={{
                         fontWeight: 700,
-                        color: 'white',
-                        fontSize: '1.1rem',
+                        color: "white",
+                        fontSize: "1.1rem",
                       }}
                     >
                       Jani
@@ -375,7 +372,7 @@ const Header: React.FC = () => {
                   </Box>
                 </motion.div>
                 {!isSmall ? (
-                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                     <AnimatePresence>
                       {NAVIGATION_ITEMS.map((item, index) => (
                         <motion.div
@@ -387,24 +384,24 @@ const Header: React.FC = () => {
                           )}
                         >
                           <Button
-                            color='inherit'
+                            color="inherit"
                             onClick={() => handleNavClick(item.href)}
                             sx={{
                               mx: 0.5,
-                              color: 'white',
+                              color: "white",
                               fontWeight: 500,
-                              padding: '6px 16px',
-                              borderRadius: '25px',
-                              fontSize: '14px',
-                              '&:hover': {
-                                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                              padding: "6px 16px",
+                              borderRadius: "25px",
+                              fontSize: "14px",
+                              "&:hover": {
+                                backgroundColor: "rgba(255, 255, 255, 0.1)",
                               },
                             }}
                           >
                             {item.label}
                           </Button>
                         </motion.div>
-                      ))}{' '}
+                      ))}{" "}
                     </AnimatePresence>
 
                     <motion.div
@@ -415,25 +412,25 @@ const Header: React.FC = () => {
                       )}
                     >
                       <Box
-                        sx={{ display: 'flex', alignItems: 'center', gap: 1 }}
+                        sx={{ display: "flex", alignItems: "center", gap: 1 }}
                       >
                         <ThemeToggle />
                         <Button
-                          variant='outlined'
+                          variant="outlined"
                           startIcon={<LoginIcon />}
                           onClick={() => setLoginOpen(true)}
                           sx={{
                             ml: 1,
                             px: 3,
                             py: 1,
-                            borderColor: '#FF6B35',
-                            color: '#FF6B35',
-                            borderRadius: '25px',
-                            fontSize: '14px',
+                            borderColor: "#FF6B35",
+                            color: "#FF6B35",
+                            borderRadius: "25px",
+                            fontSize: "14px",
                             fontWeight: 600,
-                            '&:hover': {
-                              borderColor: '#FF6B35',
-                              backgroundColor: 'rgba(255, 107, 53, 0.1)',
+                            "&:hover": {
+                              borderColor: "#FF6B35",
+                              backgroundColor: "rgba(255, 107, 53, 0.1)",
                             },
                           }}
                         >
@@ -444,11 +441,11 @@ const Header: React.FC = () => {
                   </Box>
                 ) : (
                   <IconButton
-                    color='inherit'
-                    aria-label='open drawer'
+                    color="inherit"
+                    aria-label="open drawer"
                     onClick={handleDrawerToggle}
                     sx={{
-                      color: 'white',
+                      color: "white",
                     }}
                   >
                     <MenuIcon />
@@ -460,17 +457,17 @@ const Header: React.FC = () => {
         )}
       </AppBar>
       <Drawer
-        variant='temporary'
-        anchor='right'
+        variant="temporary"
+        anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
         ModalProps={{
           keepMounted: true,
         }}
         sx={{
-          display: { xs: 'block', lg: 'none' },
-          '& .MuiDrawer-paper': {
-            boxSizing: 'border-box',
+          display: { xs: "block", lg: "none" },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
             width: 280,
             backgroundColor: theme.palette.background.paper,
           },
