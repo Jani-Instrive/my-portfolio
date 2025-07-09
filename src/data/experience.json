@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "company": "Instrive Softlabs Private Limited",
+    "position": "Software Engineer",
+    "location": "Chennai, India",
+    "startDate": "October 2022",
+    "endDate": "Present",
+    "current": true,
+    "type": "work",
+    "description": "Led frontend development for client-side projects, with solo responsibility for Zaven project and collaborative team development for other client applications.",
+    "achievements": [
+      "Led solo frontend development for Zaven project using React and Redux Toolkit",
+      "Collaborated with development teams on multiple client applications",
+      "Implemented responsive designs using Material-UI components",
+      "Maintained code quality using TypeScript and ESLint best practices"
+    ],
+    "technologies": [ "React", "ReduxToolkit", "MUI", "Github", "Swagger", "Postman", "Redux", "Typescript", "Eslint" ]
+  },
+  {
+    "id": 2,
+    "company": "Masai School",
+    "position": "Intern",
+    "location": "Remote",
+    "startDate": "June 2022",
+    "endDate": "Sep 2022",
+    "current": false,
+    "type": "education",
+    "description": "Completed comprehensive full-stack web development training program, gaining hands-on experience in modern JavaScript frameworks, state management, and API integration.",
+    "achievements": [
+      "Built multiple React applications using Redux for state management",
+      "Developed responsive user interfaces with Material-UI components",
+      "Integrated RESTful APIs using Postman for testing and documentation",
+      "Implemented TypeScript for type-safe development and ESLint for code quality",
+      "Collaborated on projects using Git version control and GitHub workflows"
+    ],
+    "technologies": ["React", "ReduxToolkit", "MUI", "Github", "Swagger", "Postman", "Redux", "Typescript", "Eslint", "HTML", "CSS", "JavaScript"]
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "name": "Shaik Jani",
+  "title": "Software Developer",
+  "bio": "Passionate product designer with 10+ years of experience creating user-centered digital experiences. I specialize in UI/UX design, wireframing, and bringing innovative ideas to life through thoughtful design.",
+  "location": "Andhra Pradesh, India",
+  "email": "shaikjanishaida47@gmail.com",
+  "phone": "+91 9347474786",
+  "website": "https://shaikjani.app",
+  "avatar": "/assets/janiImg.jpg",
+  "resumeUrl": "/assets/jenny-resume.pdf",
+  "social": {
+    "github": "https://github.com/jani474747",
+    "linkedin": "https://www.linkedin.com/in/jani-shaida-shaik/",
+    "twitter": "https://twitter.com/jani",
+    "instagram": "https://instagram.com/shaikjani.app"
+  },
+  "summary": "I'm a committed and goal-oriented aspiring web developer with a strong foundation in the MERN Stack. I thrive on solving coding challenges and building dynamic, responsive web applications that deliver seamless user experiences. My passion for technology drives me to continuously learn and stay updated with the latest trends in web development, and I find great satisfaction in turning ideas into real-world digital solutions.",
+  "interests": [
+    "React",
+    "ReduxToolkit",
+    "Typescript",
+    "Javascript",
+    "Node.js",
+    "HTML",
+    "CSS",
+    "MUI",
+    "Swagger",
+    "GitHub",
+    "Firebase",
+    "MongoDB"
+    
+  ]
+}

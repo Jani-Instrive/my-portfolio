@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "UI/UX Design",
+    "description": "Creating intuitive and visually appealing user interfaces that provide exceptional user experiences across web and mobile platforms.",
+    "icon": "palette",
+    "features": [
+      "User Interface Design",
+      "User Experience Research",
+      "Wireframing & Prototyping",
+      "Design System Creation"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Web Design",
+    "description": "Designing modern, responsive websites that combine aesthetic appeal with optimal functionality and performance.",
+    "icon": "code",
+    "features": [
+      "Responsive Web Design",
+      "Landing Page Design",
+      "E-commerce Design",
+      "Website Redesign"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Landing Page",
+    "description": "Specialized in creating high-converting landing pages that drive user engagement and achieve business goals.",
+    "icon": "smartphone",
+    "features": [
+      "Conversion Optimization",
+      "A/B Testing Design",
+      "Mobile-First Approach",
+      "Performance Optimization"
+    ]
+  }
+]

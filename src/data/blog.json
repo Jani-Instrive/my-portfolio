@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "Design Unraveled: Behind the Scenes of Creative Process",
+    "excerpt": "Discover the thought process and methodology behind creating impactful user experiences that drive business results and user engagement.",
+    "image": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop&auto=format&q=80",
+    "publishDate": "2024-06-15",
+    "readTime": "8 min read",
+    "category": "UI/UX Design",
+    "tags": ["Design Process", "UX Research", "Creativity"],
+    "featured": true
+  },
+  {
+    "id": 2,
+    "title": "Beyond Aesthetics: The Psychology of User Experience",
+    "excerpt": "Exploring how psychology principles shape user behavior and how designers can leverage these insights to create more effective interfaces.",
+    "image": "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop&auto=format&q=80",
+    "publishDate": "2024-05-28",
+    "readTime": "12 min read",
+    "category": "User Experience",
+    "tags": ["Psychology", "UX Design", "User Behavior"],
+    "featured": true
+  },
+  {
+    "id": 3,
+    "title": "Pixels & Insights: Unveiling Mobile Design Trends",
+    "excerpt": "An in-depth look at the latest mobile design trends and how they're shaping the future of digital experiences on small screens.",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=800&h=400&fit=crop&auto=format&q=80",
+    "publishDate": "2024-05-10",
+    "readTime": "6 min read",
+    "category": "Design",
+    "tags": ["Mobile Design", "Trends", "UI Design"],
+    "featured": false
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Henry Arthur",
+    "role": "CEO",
+    "company": "Food Express",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    "rating": 5,
+    "testimonial": "Jenny's exceptional product design ensured our website's success. Her attention to detail and user-centered approach helped us achieve a 60% increase in user engagement. Highly recommended!",
+    "featured": true
+  },
+  {
+    "id": 2,
+    "name": "Joshua Arthur",
+    "role": "CTO",
+    "company": "EV Charger",
+    "image": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    "rating": 5,
+    "testimonial": "Working with Jenny was transformative for our product. Her design expertise and strategic thinking helped us create an interface that our users absolutely love. Outstanding work!",
+    "featured": true
+  },
+  {
+    "id": 3,
+    "name": "Sarah Mitchell",
+    "role": "Product Manager",
+    "company": "FinTech Solutions",
+    "image": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    "rating": 5,
+    "testimonial": "Jenny's design work on our dashboard was exceptional. She perfectly balanced functionality with aesthetics, creating an interface that's both beautiful and highly usable.",
+    "featured": false
+  },
+  {
+    "id": 4,
+    "name": "David Rodriguez",
+    "role": "Founder",
+    "company": "StartupLab",
+    "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&crop=face&auto=format&q=80",
+    "rating": 5,
+    "testimonial": "Jenny delivered a brand identity that perfectly captured our vision. Her creative process and attention to detail resulted in a design system that truly represents our brand.",
+    "featured": true
+  }
+]
