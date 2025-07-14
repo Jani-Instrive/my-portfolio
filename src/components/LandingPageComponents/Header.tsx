@@ -28,7 +28,12 @@ const Header: React.FC = () => {
   const isSmall = useMediaQuery(theme.breakpoints.down('lg'));
   const [mobileOpen, setMobileOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() => {
+    if (typeof window !== "undefined") {
+      return window.scrollY > 100;
+    }
+    return false;
+  });
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
@@ -36,14 +41,21 @@ const Header: React.FC = () => {
       const scrollTop = window.scrollY;
       setIsScrolled(scrollTop > 100);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const initialScrollTop = window.scrollY;
+    setIsScrolled(initialScrollTop > 100);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
+    const initialScrollTop = window.scrollY;
+    const animationDelay = initialScrollTop > 100 ? 0 : 500;
+
     const timer = setTimeout(() => {
       setHasAnimated(true);
-    }, 1000);
+    }, animationDelay);
     return () => clearTimeout(timer);
   }, []);
 
@@ -52,13 +64,17 @@ const Header: React.FC = () => {
     animateState: any,
     delay: number = 0
   ) => {
-    if (hasAnimated) {
-      return {};
+    const shouldSkipAnimation = hasAnimated || window.scrollY > 100;
+
+    if (shouldSkipAnimation) {
+      return {
+        style: { ...animateState, opacity: 1 },
+      };
     }
     return {
       initial: initialState,
       animate: animateState,
-      transition: { duration: 0.5, delay },
+      transition: { duration: 0.3, delay: delay * 0.5 },
     };
   };
 
@@ -67,36 +83,36 @@ const Header: React.FC = () => {
   };
 
   const handleNavClick = (href: string) => {
-    const elementId = href.replace('#', '');
+    const elementId = href.replace("#", "");
     scrollToSection(elementId);
     setMobileOpen(false);
   };
 
   const drawer = (
     <Box sx={{ width: 280, pt: 2 }}>
-      <Box sx={{ display: 'flex', justifyContent: 'flex-end', pr: 2, pb: 2 }}>
+      <Box sx={{ display: "flex", justifyContent: "flex-end", pr: 2, pb: 2 }}>
         <IconButton onClick={handleDrawerToggle}>
           <CloseIcon />
         </IconButton>
       </Box>
       <List>
-        {NAVIGATION_ITEMS.map(item => (
+        {NAVIGATION_ITEMS.map((item) => (
           <ListItem key={item.id} disablePadding>
             <ListItemButton
               onClick={() => handleNavClick(item.href)}
               sx={{
                 borderRadius: 2,
-                '&:hover': {
-                  backgroundColor: theme.palette.primary.main + '20',
+                "&:hover": {
+                  backgroundColor: theme.palette.primary.main + "20",
                 },
               }}
             >
               <ListItemText
                 primary={item.label}
                 sx={{
-                  '& .MuiListItemText-primary': {
+                  "& .MuiListItemText-primary": {
                     fontWeight: 500,
-                    fontSize: '1.1rem',
+                    fontSize: "1.1rem",
                   },
                 }}
               />
@@ -104,9 +120,9 @@ const Header: React.FC = () => {
           </ListItem>
         ))}
       </List>
-      <Box sx={{ p: 2, textAlign: 'center' }}>
+      <Box sx={{ p: 2, textAlign: "center" }}>
         <Button
-          variant='outlined'
+          variant="outlined"
           startIcon={<LoginIcon />}
           onClick={() => {
             setLoginOpen(true);
@@ -115,7 +131,7 @@ const Header: React.FC = () => {
           sx={{
             mb: 2,
             px: 3,
-            width: '100%',
+            width: "100%",
           }}
         >
           Login
@@ -141,6 +157,8 @@ const Header: React.FC = () => {
           left: 0,
           right: 0,
           width: "100%",
+          opacity: 1,
+          visibility: "visible",
         }}
       >
         {isScrolled ? (
@@ -151,6 +169,7 @@ const Header: React.FC = () => {
               borderRadius: 0,
             }}
             transition={{ duration: 0.6, ease: "easeOut" }}
+            style={{ opacity: 1 }}
           >
             <Box
               sx={{

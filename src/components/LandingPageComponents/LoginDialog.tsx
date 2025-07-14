@@ -21,10 +21,10 @@ import {
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-// import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../context/useAuth';
-import GoogleIcon from '@mui/icons-material/Google';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/useAuth";
+import GoogleIcon from "@mui/icons-material/Google";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 interface LoginDialogProps {
   open: boolean;
@@ -41,7 +41,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
   const [loginError, setLoginError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const auth = useAuth();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -49,8 +49,8 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
     reset,
   } = useForm<LoginFormData>({
     defaultValues: {
-      email: 'demo@gmail.com',
-      password: 'Abc@123',
+      email: "demo@gmail.com",
+      password: "Abc@123",
     },
   });
 
@@ -65,16 +65,20 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
 
     try {
       const success = await auth?.login(data.email, data.password);
-      
+
       if (success) {
         handleClose();
         // Redirect to admin dashboard after successful login
-        // navigate('/admin', { replace: true });
+        navigate("/admin", { replace: true });
       } else {
-        setLoginError('Invalid email or password. Use demo@gmail.com and Abc@123 for demo.');
+        setLoginError(
+          "Invalid email or password. Use demo@gmail.com and Abc@123 for demo."
+        );
       }
     } catch {
-      setLoginError('Invalid email or password. Use demo@gmail.com and Abc@123 for demo.');
+      setLoginError(
+        "Invalid email or password. Use demo@gmail.com and Abc@123 for demo."
+      );
     } finally {
       setIsLoading(false);
     }
@@ -86,7 +90,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
     // For demo purposes, we'll simulate a successful login
     handleClose();
     // In a real implementation, after successful OAuth, redirect to admin
-    // navigate('/admin', { replace: true });
+    navigate("/admin", { replace: true });
   };
 
   return (
@@ -98,11 +102,11 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
       PaperProps={{
         sx: {
           borderRadius: 3,
-          overflow: 'hidden',
+          overflow: "hidden",
         },
       }}
     >
-      <DialogTitle sx={{ position: 'relative', textAlign: 'center', pb: 1 }}>
+      <DialogTitle sx={{ position: "relative", textAlign: "center", pb: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -120,7 +124,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
           aria-label="close"
           onClick={handleClose}
           sx={{
-            position: 'absolute',
+            position: "absolute",
             right: 8,
             top: 8,
           }}
@@ -148,11 +152,11 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
               type="email"
               variant="outlined"
               margin="normal"
-              {...register('email', {
-                required: 'Email is required',
+              {...register("email", {
+                required: "Email is required",
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                  message: 'Please enter a valid email address',
+                  message: "Please enter a valid email address",
                 },
               })}
               error={!!errors.email}
@@ -163,18 +167,21 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
             <TextField
               fullWidth
               label="Password"
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               variant="outlined"
               margin="normal"
-              {...register('password', {
-                required: 'Password is required',
+              {...register("password", {
+                required: "Password is required",
                 minLength: {
                   value: 6,
-                  message: 'Password must be at least 6 characters',
+                  message: "Password must be at least 6 characters",
                 },
               })}
               error={!!errors.password}
-              helperText={errors.password?.message || 'Use demo@gmail.com and Abc@123 for demo'}
+              helperText={
+                errors.password?.message ||
+                "Use demo@gmail.com and Abc@123 for demo"
+              }
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
@@ -199,13 +206,13 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
               disabled={isLoading}
               sx={{
                 py: 1.5,
-                fontSize: '1.1rem',
+                fontSize: "1.1rem",
                 fontWeight: 600,
                 borderRadius: 2,
                 mb: 2,
               }}
             >
-              {isLoading ? 'Signing In...' : 'Sign In'}
+              {isLoading ? "Signing In..." : "Sign In"}
             </Button>
           </Box>
 
@@ -215,16 +222,16 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
             </Typography>
           </Divider>
 
-          <Box sx={{ display: 'flex', gap: 2 }}>
+          <Box sx={{ display: "flex", gap: 2 }}>
             <Button
               fullWidth
               variant="outlined"
               startIcon={<GoogleIcon />}
-              onClick={() => handleSocialLogin('Google')}
+              onClick={() => handleSocialLogin("Google")}
               sx={{
                 py: 1.5,
                 borderRadius: 2,
-                textTransform: 'none',
+                textTransform: "none",
                 fontWeight: 500,
               }}
             >
@@ -234,11 +241,11 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
               fullWidth
               variant="outlined"
               startIcon={<GitHubIcon />}
-              onClick={() => handleSocialLogin('GitHub')}
+              onClick={() => handleSocialLogin("GitHub")}
               sx={{
                 py: 1.5,
                 borderRadius: 2,
-                textTransform: 'none',
+                textTransform: "none",
                 fontWeight: 500,
               }}
             >
@@ -249,13 +256,14 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
       </DialogContent>
 
       <DialogActions sx={{ px: 3, pb: 3 }}>
-        <Box sx={{ textAlign: 'center', width: '100%' }}>
+        <Box sx={{ textAlign: "center", width: "100%" }}>
           <Typography variant="body2" color="text.secondary">
-            Don't have an account?{' '}            <Button
+            Don't have an account?{" "}
+            <Button
               variant="text"
               size="small"
-              onClick={() => console.log('Sign up clicked')}
-              sx={{ textDecoration: 'underline', p: 0, minWidth: 'auto' }}
+              onClick={() => console.log("Sign up clicked")}
+              sx={{ textDecoration: "underline", p: 0, minWidth: "auto" }}
             >
               Sign up
             </Button>

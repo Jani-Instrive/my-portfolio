@@ -1,19 +1,21 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import { Provider } from 'react-redux';
-import { store } from './store';
-import LandingPage from './components/LandingPageComponents/Layout';
-// import { HomePage } from './pages/HomePage';
-import { CustomThemeProvider } from './context/ThemeProvider';
+import { store } from "./store";
+import { CustomThemeProvider } from "./context/ThemeProvider";
+import { AuthProvider } from "./context/AuthProvider";
+import { AppRouter } from "./router";
 
-function App() {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <CustomThemeProvider>
         <CssBaseline />
-        <LandingPage />
+        <AuthProvider>
+          <AppRouter />
+        </AuthProvider>
       </CustomThemeProvider>
     </Provider>
   );
-}
+};
 
-export default App
+export default App;
